@@ -1,4 +1,8 @@
 {
+    "allowJs": true,
+    "jsRules": {
+        "no-empty": true
+    },
     "rules": {
         "quotes": [
             2,

@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" 
+  xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="1.0" 
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="cust" 
+      xmlns="http://schemas.microsoft.com/ado/2008/09/edm" 
+      xmlns:sap="http://www.sap.com/Protocols/SAPData" 
+      xmlns:c4c="http://www.sap.com/Protocols/C4CData">
+      <EntityType Name="BO_AReturnVisitRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="VisitResult" Type="Edm.String" Nullable="true" MaxLength="765" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="回访结果"/>
+        <Property Name="VehicleID" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车辆 VIN码"/>
+        <Property Name="TaskPlannedDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="计划回访日期" sap:display-format="Date"/>
+        <Property Name="CarLicenseNumber" Type="Edm.String" Nullable="true" MaxLength="765" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车牌号"/>
+        <Property Name="CustomerID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户编号"/>
+        <Property Name="CustomerMobile" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户电话"/>
+        <Property Name="CustomerName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户名称"/>
+        <Property Name="DealerID" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商ERP号"/>
+        <Property Name="DealerName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商名称"/>
+        <Property Name="InvoiceNumber" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="发票号码"/>
+        <Property Name="LastReturnVisitActionDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="最后一次回访动作日期" sap:display-format="Date"/>
+        <Property Name="PurchaseDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="成交时间" sap:display-format="Date"/>
+        <Property Name="PUSERID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商用户ID"/>
+        <Property Name="PUSERName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商用户名称"/>
+        <Property Name="ReturnVisitDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="回访任务日期" sap:display-format="Date"/>
+        <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AReturnVisitRootStatusCollection" sap:label="状态" sap:text="StatusText"/>
+        <Property Name="StatusText" Type="Edm.String" Nullable="true" sap:label="状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="LastChangeDateTime"/>
+        <Property Name="SalesmanName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="销售顾问名称"/>
+      </EntityType>
+      <EntityType Name="BO_RescuePeopleRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="Latitude" Type="Edm.Int32" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="纬度"/>
+        <Property Name="Longitude" Type="Edm.Int32" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经度"/>
+        <Property Name="PhoneNumber" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="联系电话"/>
+        <Property Name="PUserId" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="救援人员"/>
+        <Property Name="PUserName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="救援人员名称"/>
+        <Property Name="TicketId" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="TicketId"/>
+      </EntityType>
+      <EntityType Name="BO_TPlatformRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="TicketID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="工单编号"/>
+        <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_TPlatformRootStatusCollection" sap:label="成功状态" sap:text="StatusText"/>
+        <Property Name="StatusText" Type="Edm.String" Nullable="true" sap:label="成功状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="SerialID" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VIN码"/>
+        <Property Name="Mileage" Type="Edm.Int32" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="行驶里程"/>
+        <Property Name="Longitude" Type="Edm.Int32" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经度"/>
+        <Property Name="RtnMsg" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="失败消息"/>
+        <Property Name="Latitude" Type="Edm.Int32" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="纬度"/>
+      </EntityType>
+      <EntityType Name="BO_ReportPreparationTextCollection">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="AuthorName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author Name"/>
+        <Property Name="AuthorUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author UUID"/>
+        <Property Name="CreatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created By"/>
+        <Property Name="CreatedOn" Type="Edm.DateTime" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created On"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="LanguageCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_ReportPreparationTextCollectionLanguageCodeCollection" sap:label="Language Code" sap:text="LanguageCodeText"/>
+        <Property Name="LanguageCodeText" Type="Edm.String" Nullable="true" sap:label="Language Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="LastUpdatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Last Updated By"/>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+        <Property Name="Text" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Text"/>
+        <Property Name="TypeCode" Type="Edm.String" Nullable="true" MaxLength="5" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_ReportPreparationTextCollectionTypeCodeCollection" sap:label="Type Code" sap:text="TypeCodeText"/>
+        <Property Name="TypeCodeText" Type="Edm.String" Nullable="true" sap:label="Type Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="UpdatedOn" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Updated On"/>
+      </EntityType>
+      <EntityType Name="BO_TechSuppDocRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="CMP_TicketID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="抱怨单号"/>
+        <Property Name="BT" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="BT"/>
+        <Property Name="TBR" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="TBR"/>
+      </EntityType>
+      <EntityType Name="BO_TV_MappingRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="TicketTypeCode2" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_TV_MappingRootTicketTypeCode2Collection" sap:label="Ticket Type" sap:text="TicketTypeCode2Text"/>
+        <Property Name="TicketTypeCode2Text" Type="Edm.String" Nullable="true" sap:label="Ticket Type Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="VOCId" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VOC Code"/>
+      </EntityType>
+      <EntityType Name="BO_AssignmentHistAssignments">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+        <Property Name="AssignmentID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="工单派发编号"/>
+        <Property Name="AssignmentUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="工单派发内部编号"/>
+        <Property Name="IsXSFWS" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="销售服务商团队"/>
+        <Property Name="PrefixofProcessor" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="处理人前缀"/>
+        <Property Name="PrefixofTeam" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="团队前缀"/>
+        <Property Name="ProcessorAssignedID" Type="Edm.String" Nullable="true" MaxLength="20" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="已分配给"/>
+        <Property Name="SMSTicketID" Type="Edm.String" Nullable="true" MaxLength="35" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="工单编号SMS"/>
+        <Property Name="TeamAssignedID" Type="Edm.String" Nullable="true" MaxLength="20" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="团队"/>
+        <Property Name="TicketProcessingTime" Type="Edm.String" Nullable="true" MaxLength="14" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="处理时间"/>
+        <Property Name="TicketStatus" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AssignmentHistAssignmentsTicketStatusCollection" sap:label="工单状态（作废）" sap:text="TicketStatusText"/>
+        <Property Name="TicketStatusText" Type="Edm.String" Nullable="true" sap:label="工单状态（作废） Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="TicketRealStatus" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AssignmentHistAssignmentsTicketRealStatusCollection" sap:label="工单状态" sap:text="TicketRealStatusText"/>
+        <Property Name="TicketRealStatusText" Type="Edm.String" Nullable="true" sap:label="工单状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="TicketBusinessSupportStatus" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AssignmentHistAssignmentsTicketBusinessSupportStatusCollection" sap:label="工单业务支持状态" sap:text="TicketBusinessSupportStatusText"/>
+        <Property Name="TicketBusinessSupportStatusText" Type="Edm.String" Nullable="true" sap:label="工单业务支持状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="TicketAuditStatus" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AssignmentHistAssignmentsTicketAuditStatusCollection" sap:label="工单客服审核状态" sap:text="TicketAuditStatusText"/>
+        <Property Name="TicketAuditStatusText" Type="Edm.String" Nullable="true" sap:label="工单客服审核状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <NavigationProperty Name="BO_AssignmentHistRoot" Relationship="cust.BO_AssignmentHistRoot_BO_AssignmentHistAssignments" FromRole="BO_AssignmentHistAssignments" ToRole="BO_AssignmentHistRoot"/>
+      </EntityType>
+      <EntityType Name="BO_AssignmentHistRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="TicketID" Type="Edm.String" Nullable="true" MaxLength="35" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="工单编号"/>
+        <NavigationProperty Name="BO_AssignmentHistAssignments" Relationship="cust.BO_AssignmentHistRoot_BO_AssignmentHistAssignments" FromRole="BO_AssignmentHistRoot" ToRole="BO_AssignmentHistAssignments"/>
+      </EntityType>
+      <EntityType Name="BO_ReportPreparationRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="RPCategory2" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_ReportPreparationRootRPCategory2Collection" sap:label="报备分类" sap:text="RPCategory2Text"/>
+        <Property Name="RPCategory2Text" Type="Edm.String" Nullable="true" sap:label="报备分类 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CustomerId" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户ID"/>
+        <Property Name="DealerERPID" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="销售ERP"/>
+        <Property Name="LicensePlateID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车牌号"/>
+        <Property Name="PhoneNo" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="手机号"/>
+        <Property Name="ServiceID" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="服务ERP"/>
+        <Property Name="ServiceName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="销售服务商"/>
+        <Property Name="ViechleID" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车辆ID"/>
+        <Property Name="VINID" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VIN码"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <Property Name="CarOwnerName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车主姓名"/>
+        <Property Name="CarBrand" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_ReportPreparationRootCarBrandCollection" sap:label="品牌" sap:text="CarBrandText"/>
+        <Property Name="CarBrandText" Type="Edm.String" Nullable="true" sap:label="品牌 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="Car_Desc" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车型描述"/>
+        <Property Name="RPCategory" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_ReportPreparationRootRPCategoryCollection" sap:label="报备分类 - 废弃，请使用RPCategory2" sap:text="RPCategoryText"/>
+        <Property Name="RPCategoryText" Type="Edm.String" Nullable="true" sap:label="报备分类 - 废弃，请使用RPCategory2 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ReportContent" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="报备内容"/>
+        <NavigationProperty Name="BO_ReportPreparationTextCollection" Relationship="cust.BO_ReportPreparationRoot_BO_ReportPreparationTextCollection" FromRole="BO_ReportPreparationRoot" ToRole="BO_ReportPreparationTextCollection"/>
+      </EntityType>
+      <EntityType Name="BO_PhoneEventRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="EventType" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_PhoneEventRootEventTypeCollection" sap:label="事件类型" sap:text="EventTypeText"/>
+        <Property Name="EventTypeText" Type="Edm.String" Nullable="true" sap:label="事件类型 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="NotReadyReason" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="休息原因"/>
+        <Property Name="Description" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="事件描述"/>
+        <Property Name="EventConnID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="事件当前ConnID"/>
+        <Property Name="AgentID" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="事件坐席ID"/>
+        <Property Name="DN" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="事件DN"/>
+        <Property Name="EmployeeID" Type="Edm.String" Nullable="true" MaxLength="20" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="事件员工ID"/>
+      </EntityType>
+      <EntityType Name="BO_TicketApprovalTextCollection">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="AuthorName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author Name"/>
+        <Property Name="AuthorUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author UUID"/>
+        <Property Name="CreatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created By"/>
+        <Property Name="CreatedOn" Type="Edm.DateTime" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created On"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="LanguageCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_TicketApprovalTextCollectionLanguageCodeCollection" sap:label="Language Code" sap:text="LanguageCodeText"/>
+        <Property Name="LanguageCodeText" Type="Edm.String" Nullable="true" sap:label="Language Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="LastUpdatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Last Updated By"/>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+        <Property Name="Text" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Text"/>
+        <Property Name="TypeCode" Type="Edm.String" Nullable="true" MaxLength="5" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_TicketApprovalTextCollectionTypeCodeCollection" sap:label="Type Code" sap:text="TypeCodeText"/>
+        <Property Name="TypeCodeText" Type="Edm.String" Nullable="true" sap:label="Type Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="UpdatedOn" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Updated On"/>
+      </EntityType>
+      <EntityType Name="BO_TicketApprovalItems">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+        <Property Name="ApprovalRole" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_TicketApprovalItemsApprovalRoleCollection" sap:label="审批人角色" sap:text="ApprovalRoleText"/>
+        <Property Name="ApprovalRoleText" Type="Edm.String" Nullable="true" sap:label="审批人角色 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ApprovalType" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_TicketApprovalItemsApprovalTypeCollection" sap:label="审批类型" sap:text="ApprovalTypeText"/>
+        <Property Name="ApprovalTypeText" Type="Edm.String" Nullable="true" sap:label="审批类型 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_TicketApprovalItemsStatusCollection" sap:label="状态" sap:text="StatusText"/>
+        <Property Name="StatusText" Type="Edm.String" Nullable="true" sap:label="状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <NavigationProperty Name="BO_TicketApprovalRoot" Relationship="cust.BO_TicketApprovalRoot_BO_TicketApprovalItems" FromRole="BO_TicketApprovalItems" ToRole="BO_TicketApprovalRoot"/>
+        <NavigationProperty Name="BO_TicketApprovalTextCollection" Relationship="cust.BO_TicketApprovalItems_BO_TicketApprovalTextCollection" FromRole="BO_TicketApprovalItems" ToRole="BO_TicketApprovalTextCollection"/>
+      </EntityType>
+      <EntityType Name="BO_TicketApprovalRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="TicketId" Type="Edm.String" Nullable="true" MaxLength="35" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="TicketId"/>
+        <NavigationProperty Name="BO_TicketApprovalItems" Relationship="cust.BO_TicketApprovalRoot_BO_TicketApprovalItems" FromRole="BO_TicketApprovalRoot" ToRole="BO_TicketApprovalItems"/>
+      </EntityType>
+      <EntityType Name="BO_ActivityConnIDRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="ActivityUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Activity UUID"/>
+        <Property Name="ConnID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Connection ID"/>
+        <Property Name="ANI" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="ANI"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+      </EntityType>
+      <EntityType Name="BO_FileLinkRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="UploadedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="上传者"/>
+        <Property Name="SAP_UUID" Type="Edm.Guid" Nullable="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="SAP_UUID"/>
+        <Property Name="RefObjectType" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_FileLinkRootRefObjectTypeCollection" sap:label="所属对象类型" sap:text="RefObjectTypeText"/>
+        <Property Name="RefObjectTypeText" Type="Edm.String" Nullable="true" sap:label="所属对象类型 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="RefObjectId" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="所属对象"/>
+        <Property Name="FileSize" Type="Edm.Int32" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="文件大小"/>
+        <Property Name="FileName" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="文件名称"/>
+        <Property Name="UploadedAt" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="上传时间"/>
+        <Property Name="CMISObjectId" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="CMISObjectId"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <Property Name="Url" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="文件地址"/>
+      </EntityType>
+      <EntityType Name="BO_AppealTextCollection">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="AuthorName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author Name"/>
+        <Property Name="AuthorUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author UUID"/>
+        <Property Name="CreatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created By"/>
+        <Property Name="CreatedOn" Type="Edm.DateTime" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created On"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="LanguageCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AppealTextCollectionLanguageCodeCollection" sap:label="Language Code" sap:text="LanguageCodeText"/>
+        <Property Name="LanguageCodeText" Type="Edm.String" Nullable="true" sap:label="Language Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="LastUpdatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Last Updated By"/>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+        <Property Name="Text" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Text"/>
+        <Property Name="TypeCode" Type="Edm.String" Nullable="true" MaxLength="5" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AppealTextCollectionTypeCodeCollection" sap:label="Type Code" sap:text="TypeCodeText"/>
+        <Property Name="TypeCodeText" Type="Edm.String" Nullable="true" sap:label="Type Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="UpdatedOn" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Updated On"/>
+      </EntityType>
+      <EntityType Name="BO_UpdateRVTRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="VIN_IDS" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VIN_IDS"/>
+        <Property Name="PUSERID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="PUSERID"/>
+        <Property Name="DealerID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="DealerID"/>
+      </EntityType>
+      <EntityType Name="BO_AppealRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="AppealType" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="申诉类别-废弃"/>
+        <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AppealRootStatusCollection" sap:label="状态" sap:text="StatusText"/>
+        <Property Name="StatusText" Type="Edm.String" Nullable="true" sap:label="状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="TicketID" Type="Edm.String" Nullable="true" MaxLength="35" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="抱怨工单ID"/>
+        <Property Name="TicketType" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AppealRootTicketTypeCollection" sap:label="申诉类别" sap:text="TicketTypeText"/>
+        <Property Name="TicketTypeText" Type="Edm.String" Nullable="true" sap:label="申诉类别 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <Property Name="SuggestContent" Type="Edm.String" Nullable="true" MaxLength="765" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="业务部门意见"/>
+        <Property Name="Content" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="申诉内容"/>
+        <NavigationProperty Name="BO_AppealTextCollection" Relationship="cust.BO_AppealRoot_BO_AppealTextCollection" FromRole="BO_AppealRoot" ToRole="BO_AppealTextCollection"/>
+      </EntityType>
+      <EntityType Name="ServiceRequest">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="CarBrand" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestCarBrandCollection" sap:label="品牌" sap:text="CarBrandText"/>
+        <Property Name="CarBrandText" Type="Edm.String" Nullable="true" sap:label="品牌 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="LastDeptID" Type="Edm.String" Nullable="true" MaxLength="20" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="上一步处理部门"/>
+        <Property Name="TrailerComp" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="第三方拖车公司"/>
+        <Property Name="AssigningTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="派发时间"/>
+        <Property Name="TrailerExpReachTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="拖车预计达到时间"/>
+        <Property Name="TransferedDepID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="转交部门"/>
+        <Property Name="TransferedDepName" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="转交部门名称"/>
+        <Property Name="AssigningTimeStr" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="派发时间-APP"/>
+        <Property Name="ID" Type="Edm.String" Nullable="true" MaxLength="35" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="ID"/>
+        <Property Name="Name" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Description"/>
+        <Property Name="PhoneNo" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="手机号"/>
+        <Property Name="ProcessingTypeCode" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestProcessingTypeCodeCollection" sap:label="Ticket Type" sap:text="ProcessingTypeCodeText"/>
+        <Property Name="ProcessingTypeCodeText" Type="Edm.String" Nullable="true" sap:label="Ticket Type Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CarsSerialID" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="底盘号"/>
+        <Property Name="LicensePlateID" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车牌号(废弃)"/>
+        <Property Name="IsDealerReply" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="销售服务商是否回复"/>
+        <Property Name="RemindingCount" Type="Edm.Decimal" Nullable="true" Precision="7" Scale="2" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="催单次数"/>
+        <Property Name="ComplainClasscontent" Type="Edm.String" Nullable="true" MaxLength="99" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestComplainClasscontentCollection" sap:label="抱怨级别" sap:text="ComplainClasscontentText"/>
+        <Property Name="ComplainClasscontentText" Type="Edm.String" Nullable="true" sap:label="抱怨级别 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ServiceRequestUserLifeCycleStatusCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestServiceRequestUserLifeCycleStatusCodeCollection" sap:label="Status" sap:text="ServiceRequestUserLifeCycleStatusCodeText"/>
+        <Property Name="ServiceRequestUserLifeCycleStatusCodeText" Type="Edm.String" Nullable="true" sap:label="Status Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="AssignOverTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="派发超时提醒时间"/>
+        <Property Name="ServiceAndSupportTeam" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="ServiceAndSupportTeam"/>
+        <Property Name="PUserID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="PUserID"/>
+        <Property Name="ArrivalConfirmbyCust" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestArrivalConfirmbyCustCollection" sap:label="客户确认结果" sap:text="ArrivalConfirmbyCustText"/>
+        <Property Name="ArrivalConfirmbyCustText" Type="Edm.String" Nullable="true" sap:label="客户确认结果 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="NeedRescueStatus" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestNeedRescueStatusCollection" sap:label="需要救援状态" sap:text="NeedRescueStatusText"/>
+        <Property Name="NeedRescueStatusText" Type="Edm.String" Nullable="true" sap:label="需要救援状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="IsNeedTrailer" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="第三方拖车"/>
+        <Property Name="ProQuality" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestProQualityCollection" sap:label="产品质量具体原因" sap:text="ProQualityText"/>
+        <Property Name="ProQualityText" Type="Edm.String" Nullable="true" sap:label="产品质量具体原因 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="NoChangePartReason" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestNoChangePartReasonCollection" sap:label="未更换备件原因" sap:text="NoChangePartReasonText"/>
+        <Property Name="NoChangePartReasonText" Type="Edm.String" Nullable="true" sap:label="未更换备件原因 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CloseOverTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="闭环超时提醒时间"/>
+        <Property Name="VINID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VIN码"/>
+        <Property Name="CarOwnerPhoneNo" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车主电话"/>
+        <Property Name="CarOwnerName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车主姓名"/>
+        <Property Name="LicensePlate" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车牌号"/>
+        <Property Name="ConformRescueStatus" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestConformRescueStatusCollection" sap:label="符合救援状态" sap:text="ConformRescueStatusText"/>
+        <Property Name="ConformRescueStatusText" Type="Edm.String" Nullable="true" sap:label="符合救援状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="IsSecNetLead" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestIsSecNetLeadCollection" sap:label="是否二网导致" sap:text="IsSecNetLeadText"/>
+        <Property Name="IsSecNetLeadText" Type="Edm.String" Nullable="true" sap:label="是否二网导致 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="VOCFirstLevel" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VOC客户第一层"/>
+        <Property Name="CustomerQuestionDesc" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户问题描述"/>
+        <Property Name="ApptCloseApprovalReason" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="预约闭环申请原因"/>
+        <Property Name="CloseApprovalReason" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="申请闭环审核申请原因"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <Property Name="IsChangeSparePart" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestIsChangeSparePartCollection" sap:label="是否更换备件" sap:text="IsChangeSparePartText"/>
+        <Property Name="IsChangeSparePartText" Type="Edm.String" Nullable="true" sap:label="是否更换备件 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="IsProQuality" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestIsProQualityCollection" sap:label="是否产品质量原因" sap:text="IsProQualityText"/>
+        <Property Name="IsProQualityText" Type="Edm.String" Nullable="true" sap:label="是否产品质量原因 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="HasAppointed" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="已转预约"/>
+        <Property Name="ZYApintID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="卓越预约单编号"/>
+        <Property Name="ZYApintLog" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="卓越预约单日志"/>
+        <Property Name="ZYApointfroComplain" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestZYApointfroComplainCollection" sap:label="抱怨卓越预约状态" sap:text="ZYApointfroComplainText"/>
+        <Property Name="ZYApointfroComplainText" Type="Edm.String" Nullable="true" sap:label="抱怨卓越预约状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ZYAptStatus" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestZYAptStatusCollection" sap:label="卓越预约单状态" sap:text="ZYAptStatusText"/>
+        <Property Name="ZYAptStatusText" Type="Edm.String" Nullable="true" sap:label="卓越预约单状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ZYTechRepID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="卓越技术报告单编号"/>
+        <Property Name="ZYTechRepLog" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="卓越技术报告单日志"/>
+        <Property Name="ZYTechSupfroComplain" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestZYTechSupfroComplainCollection" sap:label="抱怨卓越技术报告状态" sap:text="ZYTechSupfroComplainText"/>
+        <Property Name="ZYTechSupfroComplainText" Type="Edm.String" Nullable="true" sap:label="抱怨卓越技术报告状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ZYTicketStatus" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestZYTicketStatusCollection" sap:label="卓越工单状态" sap:text="ZYTicketStatusText"/>
+        <Property Name="ZYTicketStatusText" Type="Edm.String" Nullable="true" sap:label="卓越工单状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="AppointDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="预约日期" sap:display-format="Date"/>
+        <Property Name="AppointPeriod" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestAppointPeriodCollection" sap:label="预约时间段" sap:text="AppointPeriodText"/>
+        <Property Name="AppointPeriodText" Type="Edm.String" Nullable="true" sap:label="预约时间段 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="AptCarIDcontent" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车型"/>
+        <Property Name="TicketSource" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestTicketSourceCollection" sap:label="工单来源" sap:text="TicketSourceText"/>
+        <Property Name="TicketSourceText" Type="Edm.String" Nullable="true" sap:label="工单来源 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="Car_Latitute" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车辆纬度"/>
+        <Property Name="Car_Longtitude" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车辆经度"/>
+        <Property Name="RevisionCount" Type="Edm.Decimal" Nullable="true" Precision="7" Scale="2" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="驳回次数"/>
+        <Property Name="RemindingDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="催单时间"/>
+        <Property Name="AppCloseOpinion" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="申请闭环审核意见"/>
+        <Property Name="AppointContentcontent" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestAppointContentcontentCollection" sap:label="预约内容" sap:text="AppointContentcontentText"/>
+        <Property Name="AppointContentcontentText" Type="Edm.String" Nullable="true" sap:label="预约内容 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ApptCloseApprovalYWStatus" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestApptCloseApprovalYWStatusCollection" sap:label="预约闭环业务审核状态" sap:text="ApptCloseApprovalYWStatusText"/>
+        <Property Name="ApptCloseApprovalYWStatusText" Type="Edm.String" Nullable="true" sap:label="预约闭环业务审核状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ApptCloseApprovalZXStatus" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestApptCloseApprovalZXStatusCollection" sap:label="预约闭环坐席审核状态" sap:text="ApptCloseApprovalZXStatusText"/>
+        <Property Name="ApptCloseApprovalZXStatusText" Type="Edm.String" Nullable="true" sap:label="预约闭环坐席审核状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="IsPreSalesAssign" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="IsPreSalesAssign"/>
+        <Property Name="ApplyCloseApproval" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestApplyCloseApprovalCollection" sap:label="申请闭环审核状态" sap:text="ApplyCloseApprovalText"/>
+        <Property Name="ApplyCloseApprovalText" Type="Edm.String" Nullable="true" sap:label="申请闭环审核状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="DealerQuestionDesc" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="服务站问题描述"/>
+        <Property Name="VOCDealerFirstLevID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VOC-Dealer-Id-Level1"/>
+        <Property Name="VOCDealerFirstLevel" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VOC服务站第一层"/>
+        <Property Name="PUSER" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="PUSER"/>
+        <NavigationProperty Name="ServiceRequestParty" Relationship="cust.ServiceRequest_ServiceRequestParty" FromRole="ServiceRequest" ToRole="ServiceRequestParty"/>
+      </EntityType>
+      <EntityType Name="IndividualProductServiceProcessInformation">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="Batch" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="批次"/>
+        <Property Name="Bill_PurchaseDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="开票日期/购车日期" sap:display-format="Date"/>
+        <Property Name="CarOwnerTypecontent" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationCarOwnerTypecontentCollection" sap:label="类型" sap:text="CarOwnerTypecontentText"/>
+        <Property Name="CarOwnerTypecontentText" Type="Edm.String" Nullable="true" sap:label="类型 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CarPropertycontent" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationCarPropertycontentCollection" sap:label="车辆性质" sap:text="CarPropertycontentText"/>
+        <Property Name="CarPropertycontentText" Type="Edm.String" Nullable="true" sap:label="车辆性质 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CarPurchaseYear" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="购车年限"/>
+        <Property Name="CarRankcontent" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationCarRankcontentCollection" sap:label="车辆级别" sap:text="CarRankcontentText"/>
+        <Property Name="CarRankcontentText" Type="Edm.String" Nullable="true" sap:label="车辆级别 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CarSoldDealer" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="售出经销商"/>
+        <Property Name="CarSoldDealerERP" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="售出经销商ERP"/>
+        <Property Name="CarUsagecontent" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationCarUsagecontentCollection" sap:label="购车用途" sap:text="CarUsagecontentText"/>
+        <Property Name="CarUsagecontentText" Type="Edm.String" Nullable="true" sap:label="购车用途 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="ContractDepartment" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="合同单位"/>
+        <Property Name="CustomerID_IndPrd" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户编号"/>
+        <Property Name="DeliveryDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="交车日期" sap:display-format="Date"/>
+        <Property Name="FirstInsuranceExpiredDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="首保到期日" sap:display-format="Date"/>
+        <Property Name="InsuranceExpiredDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="保险到期日" sap:display-format="Date"/>
+        <Property Name="InvoiceNo" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="发票号"/>
+        <Property Name="InvoideDateByCustomer" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户反馈开票日期" sap:display-format="Date"/>
+        <Property Name="IsResellingVehicle" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="是否转卖车辆"/>
+        <Property Name="IsVehicleWarrantycontent" Type="Edm.String" Nullable="true" MaxLength="5" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationIsVehicleWarrantycontentCollection" sap:label="是否在保车辆" sap:text="IsVehicleWarrantycontentText"/>
+        <Property Name="IsVehicleWarrantycontentText" Type="Edm.String" Nullable="true" sap:label="是否在保车辆 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="Level2DealerName" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="二级经销商名称"/>
+        <Property Name="LoanChannel" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationLoanChannelCollection" sap:label="贷款渠道" sap:text="LoanChannelText"/>
+        <Property Name="LoanChannelText" Type="Edm.String" Nullable="true" sap:label="贷款渠道 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="LoanType" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationLoanTypeCollection" sap:label="贷款方案" sap:text="LoanTypeText"/>
+        <Property Name="LoanTypeText" Type="Edm.String" Nullable="true" sap:label="贷款方案 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="NotificationNumber" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="公告号"/>
+        <Property Name="OriginalDealerERP" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="原始经销商ERP"/>
+        <Property Name="OutboundDeliveryDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="出库日期" sap:display-format="Date"/>
+        <Property Name="PaymentTypeBCOcontent" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationPaymentTypeBCOcontentCollection" sap:label="付款方式" sap:text="PaymentTypeBCOcontentText"/>
+        <Property Name="PaymentTypeBCOcontentText" Type="Edm.String" Nullable="true" sap:label="付款方式 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="PurchaseDateTime" Type="Edm.String" Nullable="true" MaxLength="14" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Purchase Date Time"/>
+        <Property Name="PurchasedCarBrand" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="曾购车品牌"/>
+        <Property Name="QualifiedID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="合格证号"/>
+        <Property Name="SerialID" Type="Edm.String" Nullable="true" MaxLength="30" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Serial ID"/>
+        <Property Name="SpecialPricecontent" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationSpecialPricecontentCollection" sap:label="是否特销" sap:text="SpecialPricecontentText"/>
+        <Property Name="SpecialPricecontentText" Type="Edm.String" Nullable="true" sap:label="是否特销 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="SpecialSalesNO" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="特销号"/>
+        <Property Name="LicensePlateID_IP" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车牌号"/>
+        <Property Name="EngineID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="发动机号"/>
+        <Property Name="VehicleBrand" Type="Edm.String" Nullable="true" MaxLength="120" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车辆品牌"/>
+        <Property Name="LicensePlateDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="上牌日期" sap:display-format="Date"/>
+        <Property Name="VIC_ModelName" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车型名称"/>
+        <Property Name="Brand" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="IndividualProductServiceProcessInformationBrandCollection" sap:label="品牌" sap:text="BrandText"/>
+        <Property Name="BrandText" Type="Edm.String" Nullable="true" sap:label="品牌 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Product Description"/>
+      </EntityType>
+      <EntityType Name="BO_VOCRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VOC Description"/>
+        <Property Name="HasChild" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="HasChild"/>
+        <Property Name="HasParent" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="HasParent"/>
+        <Property Name="Id" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VOC Code"/>
+        <Property Name="ParentId" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Parent Code"/>
+        <Property Name="toDeleteIndicator" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Deleted Flag"/>
+        <Property Name="Verified" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Verified"/>
+        <Property Name="IsForDealer" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="For Dealer"/>
+      </EntityType>
+      <EntityType Name="BO_AppointmentDocRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="CMP_TicketID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="CMP_TicketID"/>
+        <Property Name="SRVType" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AppointmentDocRootSRVTypeCollection" sap:label="预约内容" sap:text="SRVTypeText"/>
+        <Property Name="SRVTypeText" Type="Edm.String" Nullable="true" sap:label="预约内容 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="APTDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="预约日期" sap:display-format="Date"/>
+        <Property Name="APTTime" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_AppointmentDocRootAPTTimeCollection" sap:label="预约时间段" sap:text="APTTimeText"/>
+        <Property Name="APTTimeText" Type="Edm.String" Nullable="true" sap:label="预约时间段 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="Operator" Type="Edm.String" Nullable="true" MaxLength="20" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="操作者"/>
+        <Property Name="DirectCrtZYInd" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="直接创建卓越预约单标识"/>
+        <Property Name="APT_TicketID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="APT_TicketID"/>
+      </EntityType>
+      <EntityType Name="CustomerToCustomer">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="BusinessPartnerFormattedName" Type="Edm.String" Nullable="true" MaxLength="480" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Name"/>
+      </EntityType>
+      <EntityType Name="IndividualProductToVehicle">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+      </EntityType>
+      <EntityType Name="BO_ReturnVisitReturnVisitTask">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="CustomerID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户编号"/>
+        <Property Name="DealerID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商ERP号"/>
+        <Property Name="LastReturnVisitActionDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="最后一次回访动作日期" sap:display-format="Date"/>
+        <Property Name="PUSERID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商用户ID"/>
+        <Property Name="ReturnVisitDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="回访任务日期" sap:display-format="Date"/>
+        <Property Name="VisitResult" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="回访结果"/>
+        <Property Name="VehicleID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车辆 VIN码"/>
+        <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_ReturnVisitReturnVisitTaskStatusCollection" sap:label="状态" sap:text="StatusText"/>
+        <Property Name="StatusText" Type="Edm.String" Nullable="true" sap:label="状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="LastChangeDateTime"/>
+        <Property Name="SAP_ToCustomer" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="SAP_ToCustomer"/>
+        <Property Name="SAP_ToVehicle" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="SAP_ToVehicle"/>
+        <Property Name="PUSERName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商用户名称"/>
+        <Property Name="CustomerPhoneNo" Type="Edm.String" Nullable="true" MaxLength="765" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户电话"/>
+        <Property Name="CustomerName" Type="Edm.String" Nullable="true" MaxLength="765" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="客户名称"/>
+        <Property Name="VINID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="VIN码主键"/>
+        <Property Name="TaskPlannedDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="计划回访日期" sap:display-format="Date"/>
+        <Property Name="InvoiceNumber" Type="Edm.String" Nullable="true" MaxLength="765" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="发票号码"/>
+        <Property Name="PurchaseDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="成交时间" sap:display-format="Date"/>
+        <Property Name="CarLicenseNumber" Type="Edm.String" Nullable="true" MaxLength="765" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="车牌号"/>
+        <NavigationProperty Name="BO_ReturnVisitRoot" Relationship="cust.BO_ReturnVisitRoot_BO_ReturnVisitReturnVisitTask" FromRole="BO_ReturnVisitReturnVisitTask" ToRole="BO_ReturnVisitRoot"/>
+        <NavigationProperty Name="CustomerToCustomer" Relationship="cust.BO_ReturnVisitReturnVisitTask_CustomerToCustomer" FromRole="BO_ReturnVisitReturnVisitTask" ToRole="CustomerToCustomer"/>
+        <NavigationProperty Name="IndividualProductToVehicle" Relationship="cust.BO_ReturnVisitReturnVisitTask_IndividualProductToVehicle" FromRole="BO_ReturnVisitReturnVisitTask" ToRole="IndividualProductToVehicle"/>
+      </EntityType>
+      <EntityType Name="BO_ReturnVisitRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="DateFrom" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="开始日期" sap:display-format="Date"/>
+        <Property Name="DateTo" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="截止日期" sap:display-format="Date"/>
+        <Property Name="DealerID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商ERP号"/>
+        <Property Name="DealerName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商名字"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <Property Name="TaskPlannedDate" Type="Edm.DateTime" Nullable="true" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="回访设定日期" sap:display-format="Date"/>
+        <Property Name="PUSERID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="创建者用户ID"/>
+        <Property Name="PUSERName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="创建者用户名称"/>
+        <NavigationProperty Name="BO_ReturnVisitReturnVisitTask" Relationship="cust.BO_ReturnVisitRoot_BO_ReturnVisitReturnVisitTask" FromRole="BO_ReturnVisitRoot" ToRole="BO_ReturnVisitReturnVisitTask"/>
+      </EntityType>
+      <EntityType Name="BO_DealerRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="ServiceERP" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="服务ERP"/>
+        <Property Name="VehicleERP" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="整车ERP"/>
+        <Property Name="DealerID" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商编号"/>
+        <Property Name="DealerName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="经销商名称"/>
+      </EntityType>
+      <EntityType Name="ServiceRequestParty">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="PartyTypeCode" Type="Edm.String" Nullable="true" MaxLength="15" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" c4c:value-help="ServiceRequestApplyCloseApprovalCollection" sap:label="PartyTypeCode" sap:text="PartyTypeCodeText"/>
+        <Property Name="PartyTypeCodeText" Type="Edm.String" Nullable="true" sap:label="PartyTypeCodeText" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="PartyID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="PartyID"/>
+        <Property Name="PartyUUID" Type="Edm.Guid" Nullable="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="PartyUUID"/>
+        <Property Name="RoleCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceRequestPartyRoleCodeCollection" sap:label="Role" sap:text="RoleCodeText"/>
+        <Property Name="RoleCodeText" Type="Edm.String" Nullable="true" sap:label="Role Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <NavigationProperty Name="ServiceRequest" Relationship="cust.ServiceRequest_ServiceRequestParty" FromRole="ServiceRequestParty" ToRole="ServiceRequest"/>
+      </EntityType>
+      <EntityType Name="BO_RemindAppendHistRoot">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_RemindAppendHistRootStatusCollection" sap:label="状态" sap:text="StatusText"/>
+        <Property Name="StatusText" Type="Edm.String" Nullable="true" sap:label="状态 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="TicketSource" Type="Edm.String" Nullable="true" MaxLength="27" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_RemindAppendHistRootTicketSourceCollection" sap:label="工单来源" sap:text="TicketSourceText"/>
+        <Property Name="TicketSourceText" Type="Edm.String" Nullable="true" sap:label="工单来源 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="Type" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_RemindAppendHistRootTypeCollection" sap:label="类型" sap:text="TypeText"/>
+        <Property Name="TypeText" Type="Edm.String" Nullable="true" sap:label="类型 Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="Summary" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="简要情况"/>
+        <Property Name="CusName" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="来电客户"/>
+        <Property Name="CusPhone" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="来电号码"/>
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="CreationDateTime"/>
+        <Property Name="TicketID" Type="Edm.String" Nullable="true" MaxLength="35" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="工单编号"/>
+        <NavigationProperty Name="BO_RemindAppendHistCusComplaint" Relationship="cust.BO_RemindAppendHistRoot_BO_RemindAppendHistCusComplaint" FromRole="BO_RemindAppendHistRoot" ToRole="BO_RemindAppendHistCusComplaint"/>
+        <NavigationProperty Name="BO_RemindAppendHistProcessDetail" Relationship="cust.BO_RemindAppendHistRoot_BO_RemindAppendHistProcessDetail" FromRole="BO_RemindAppendHistRoot" ToRole="BO_RemindAppendHistProcessDetail"/>
+        <NavigationProperty Name="BusinessPartnerCommon" Relationship="cust.BO_RemindAppendHistRoot_BusinessPartnerCommon" FromRole="BO_RemindAppendHistRoot" ToRole="BusinessPartnerCommon"/>
+      </EntityType>
+      <EntityType Name="BO_RemindAppendHistCusComplaint">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="AuthorName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author Name"/>
+        <Property Name="AuthorUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author UUID"/>
+        <Property Name="CreatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created By"/>
+        <Property Name="CreatedOn" Type="Edm.DateTime" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created On"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="LanguageCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_RemindAppendHistCusComplaintLanguageCodeCollection" sap:label="Language Code" sap:text="LanguageCodeText"/>
+        <Property Name="LanguageCodeText" Type="Edm.String" Nullable="true" sap:label="Language Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="LastUpdatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Last Updated By"/>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+        <Property Name="Text" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Text"/>
+        <Property Name="TypeCode" Type="Edm.String" Nullable="true" MaxLength="5" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_RemindAppendHistCusComplaintTypeCodeCollection" sap:label="Type Code" sap:text="TypeCodeText"/>
+        <Property Name="TypeCodeText" Type="Edm.String" Nullable="true" sap:label="Type Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="UpdatedOn" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Updated On"/>
+      </EntityType>
+      <EntityType Name="BO_RemindAppendHistProcessDetail">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="AuthorName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author Name"/>
+        <Property Name="AuthorUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Author UUID"/>
+        <Property Name="CreatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created By"/>
+        <Property Name="CreatedOn" Type="Edm.DateTime" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created On"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="LanguageCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_RemindAppendHistProcessDetailLanguageCodeCollection" sap:label="Language Code" sap:text="LanguageCodeText"/>
+        <Property Name="LanguageCodeText" Type="Edm.String" Nullable="true" sap:label="Language Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="LastUpdatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Last Updated By"/>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+        <Property Name="Text" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Text"/>
+        <Property Name="TypeCode" Type="Edm.String" Nullable="true" MaxLength="5" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" c4c:value-help="BO_RemindAppendHistProcessDetailTypeCodeCollection" sap:label="Type Code" sap:text="TypeCodeText"/>
+        <Property Name="TypeCodeText" Type="Edm.String" Nullable="true" sap:label="Type Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+        <Property Name="UpdatedOn" Type="Edm.DateTime" Nullable="false" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Updated On"/>
+      </EntityType>
+      <EntityType Name="BusinessPartnerCommon">
+        <Key>
+          <PropertyRef Name="ObjectID"/>
+        </Key>
+        <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+        <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+        <Property Name="BusinessPartnerFormattedName" Type="Edm.String" Nullable="true" MaxLength="480" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Name"/>
+      </EntityType>
+      <EntityType Name="CodeList">
+        <Key>
+          <PropertyRef Name="Code"/>
+        </Key>
+        <Property Name="Code" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Code"/>
+        <Property Name="Description" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Description"/>
+      </EntityType>
+      <Association Name="BO_AppealRoot_BO_AppealTextCollection">
+        <End Type="cust.BO_AppealRoot" Multiplicity="1" Role="BO_AppealRoot"/>
+        <End Type="cust.BO_AppealTextCollection" Multiplicity="*" Role="BO_AppealTextCollection"/>
+      </Association>
+      <Association Name="BO_AssignmentHistRoot_BO_AssignmentHistAssignments">
+        <End Type="cust.BO_AssignmentHistRoot" Multiplicity="1" Role="BO_AssignmentHistRoot"/>
+        <End Type="cust.BO_AssignmentHistAssignments" Multiplicity="*" Role="BO_AssignmentHistAssignments"/>
+      </Association>
+      <Association Name="BO_RemindAppendHistRoot_BO_RemindAppendHistCusComplaint">
+        <End Type="cust.BO_RemindAppendHistRoot" Multiplicity="1" Role="BO_RemindAppendHistRoot"/>
+        <End Type="cust.BO_RemindAppendHistCusComplaint" Multiplicity="*" Role="BO_RemindAppendHistCusComplaint"/>
+      </Association>
+      <Association Name="BO_RemindAppendHistRoot_BO_RemindAppendHistProcessDetail">
+        <End Type="cust.BO_RemindAppendHistRoot" Multiplicity="1" Role="BO_RemindAppendHistRoot"/>
+        <End Type="cust.BO_RemindAppendHistProcessDetail" Multiplicity="*" Role="BO_RemindAppendHistProcessDetail"/>
+      </Association>
+      <Association Name="BO_RemindAppendHistRoot_BusinessPartnerCommon">
+        <End Type="cust.BO_RemindAppendHistRoot" Multiplicity="1" Role="BO_RemindAppendHistRoot"/>
+        <End Type="cust.BusinessPartnerCommon" Multiplicity="*" Role="BusinessPartnerCommon"/>
+      </Association>
+      <Association Name="BO_ReportPreparationRoot_BO_ReportPreparationTextCollection">
+        <End Type="cust.BO_ReportPreparationRoot" Multiplicity="1" Role="BO_ReportPreparationRoot"/>
+        <End Type="cust.BO_ReportPreparationTextCollection" Multiplicity="*" Role="BO_ReportPreparationTextCollection"/>
+      </Association>
+      <Association Name="BO_ReturnVisitReturnVisitTask_CustomerToCustomer">
+        <End Type="cust.BO_ReturnVisitReturnVisitTask" Multiplicity="1" Role="BO_ReturnVisitReturnVisitTask"/>
+        <End Type="cust.CustomerToCustomer" Multiplicity="1" Role="CustomerToCustomer"/>
+      </Association>
+      <Association Name="BO_ReturnVisitReturnVisitTask_IndividualProductToVehicle">
+        <End Type="cust.BO_ReturnVisitReturnVisitTask" Multiplicity="1" Role="BO_ReturnVisitReturnVisitTask"/>
+        <End Type="cust.IndividualProductToVehicle" Multiplicity="1" Role="IndividualProductToVehicle"/>
+      </Association>
+      <Association Name="BO_ReturnVisitRoot_BO_ReturnVisitReturnVisitTask">
+        <End Type="cust.BO_ReturnVisitRoot" Multiplicity="1" Role="BO_ReturnVisitRoot"/>
+        <End Type="cust.BO_ReturnVisitReturnVisitTask" Multiplicity="*" Role="BO_ReturnVisitReturnVisitTask"/>
+      </Association>
+      <Association Name="BO_TicketApprovalItems_BO_TicketApprovalTextCollection">
+        <End Type="cust.BO_TicketApprovalItems" Multiplicity="1" Role="BO_TicketApprovalItems"/>
+        <End Type="cust.BO_TicketApprovalTextCollection" Multiplicity="*" Role="BO_TicketApprovalTextCollection"/>
+      </Association>
+      <Association Name="BO_TicketApprovalRoot_BO_TicketApprovalItems">
+        <End Type="cust.BO_TicketApprovalRoot" Multiplicity="1" Role="BO_TicketApprovalRoot"/>
+        <End Type="cust.BO_TicketApprovalItems" Multiplicity="*" Role="BO_TicketApprovalItems"/>
+      </Association>
+      <Association Name="ServiceRequest_ServiceRequestParty">
+        <End Type="cust.ServiceRequestParty" Multiplicity="*" Role="ServiceRequestParty"/>
+        <End Type="cust.ServiceRequest" Multiplicity="1" Role="ServiceRequest"/>
+      </Association>
+      <EntityContainer Name="servicemobileapp" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="BO_AReturnVisitRootCollection" EntityType="cust.BO_AReturnVisitRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_AReturnVisitRootCollection"/>
+        <EntitySet Name="BO_AReturnVisitRootStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_ActivityConnIDRootCollection" EntityType="cust.BO_ActivityConnIDRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_ActivityConnIDRootCollection"/>
+        <EntitySet Name="BO_AppealRootCollection" EntityType="cust.BO_AppealRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_AppealRootCollection"/>
+        <EntitySet Name="BO_AppealRootStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AppealRootTicketTypeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AppealTextCollectionCollection" EntityType="cust.BO_AppealTextCollection" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_AppealTextCollectionCollection"/>
+        <EntitySet Name="BO_AppealTextCollectionLanguageCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AppealTextCollectionTypeCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AppointmentDocRootAPTTimeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AppointmentDocRootCollection" EntityType="cust.BO_AppointmentDocRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_AppointmentDocRootCollection"/>
+        <EntitySet Name="BO_AppointmentDocRootSRVTypeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AssignmentHistAssignmentsCollection" EntityType="cust.BO_AssignmentHistAssignments" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_AssignmentHistAssignmentsCollection"/>
+        <EntitySet Name="BO_AssignmentHistAssignmentsTicketAuditStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AssignmentHistAssignmentsTicketBusinessSupportStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AssignmentHistAssignmentsTicketRealStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AssignmentHistAssignmentsTicketStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_AssignmentHistRootCollection" EntityType="cust.BO_AssignmentHistRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_AssignmentHistRootCollection"/>
+        <EntitySet Name="BO_DealerRootCollection" EntityType="cust.BO_DealerRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_DealerRootCollection"/>
+        <EntitySet Name="BO_FileLinkRootCollection" EntityType="cust.BO_FileLinkRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_FileLinkRootCollection"/>
+        <EntitySet Name="BO_FileLinkRootRefObjectTypeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_PhoneEventRootCollection" EntityType="cust.BO_PhoneEventRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_PhoneEventRootCollection"/>
+        <EntitySet Name="BO_PhoneEventRootEventTypeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_RemindAppendHistCusComplaintCollection" EntityType="cust.BO_RemindAppendHistCusComplaint" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_RemindAppendHistCusComplaintCollection"/>
+        <EntitySet Name="BO_RemindAppendHistCusComplaintLanguageCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_RemindAppendHistCusComplaintTypeCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_RemindAppendHistProcessDetailCollection" EntityType="cust.BO_RemindAppendHistProcessDetail" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_RemindAppendHistProcessDetailCollection"/>
+        <EntitySet Name="BO_RemindAppendHistProcessDetailLanguageCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_RemindAppendHistProcessDetailTypeCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_RemindAppendHistRootCollection" EntityType="cust.BO_RemindAppendHistRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_RemindAppendHistRootCollection"/>
+        <EntitySet Name="BO_RemindAppendHistRootStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_RemindAppendHistRootTicketSourceCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_RemindAppendHistRootTypeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_ReportPreparationRootCarBrandCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_ReportPreparationRootCollection" EntityType="cust.BO_ReportPreparationRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_ReportPreparationRootCollection"/>
+        <EntitySet Name="BO_ReportPreparationRootRPCategory2Collection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_ReportPreparationRootRPCategoryCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_ReportPreparationTextCollectionCollection" EntityType="cust.BO_ReportPreparationTextCollection" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_ReportPreparationTextCollectionCollection"/>
+        <EntitySet Name="BO_ReportPreparationTextCollectionLanguageCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_ReportPreparationTextCollectionTypeCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_RescuePeopleRootCollection" EntityType="cust.BO_RescuePeopleRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_RescuePeopleRootCollection"/>
+        <EntitySet Name="BO_ReturnVisitReturnVisitTaskCollection" EntityType="cust.BO_ReturnVisitReturnVisitTask" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_ReturnVisitReturnVisitTaskCollection"/>
+        <EntitySet Name="BO_ReturnVisitReturnVisitTaskStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_ReturnVisitRootCollection" EntityType="cust.BO_ReturnVisitRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_ReturnVisitRootCollection"/>
+        <EntitySet Name="BO_TPlatformRootCollection" EntityType="cust.BO_TPlatformRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_TPlatformRootCollection"/>
+        <EntitySet Name="BO_TPlatformRootStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_TV_MappingRootCollection" EntityType="cust.BO_TV_MappingRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_TV_MappingRootCollection"/>
+        <EntitySet Name="BO_TV_MappingRootTicketTypeCode2Collection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_TechSuppDocRootCollection" EntityType="cust.BO_TechSuppDocRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_TechSuppDocRootCollection"/>
+        <EntitySet Name="BO_TicketApprovalItemsApprovalRoleCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_TicketApprovalItemsApprovalTypeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_TicketApprovalItemsCollection" EntityType="cust.BO_TicketApprovalItems" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_TicketApprovalItemsCollection"/>
+        <EntitySet Name="BO_TicketApprovalItemsStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_TicketApprovalRootCollection" EntityType="cust.BO_TicketApprovalRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_TicketApprovalRootCollection"/>
+        <EntitySet Name="BO_TicketApprovalTextCollectionCollection" EntityType="cust.BO_TicketApprovalTextCollection" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_TicketApprovalTextCollectionCollection"/>
+        <EntitySet Name="BO_TicketApprovalTextCollectionLanguageCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_TicketApprovalTextCollectionTypeCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="BO_UpdateRVTRootCollection" EntityType="cust.BO_UpdateRVTRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_UpdateRVTRootCollection"/>
+        <EntitySet Name="BO_VOCRootCollection" EntityType="cust.BO_VOCRoot" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BO_VOCRootCollection"/>
+        <EntitySet Name="BusinessPartnerCommonCollection" EntityType="cust.BusinessPartnerCommon" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="BusinessPartnerCommonCollection"/>
+        <EntitySet Name="CustomerToCustomerCollection" EntityType="cust.CustomerToCustomer" sap:creatable="false" sap:updatable="true" sap:deletable="true" sap:label="Account"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationBrandCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationCarOwnerTypecontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationCarPropertycontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationCarRankcontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationCarUsagecontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationCollection" EntityType="cust.IndividualProductServiceProcessInformation" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Service Process Information"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationIsVehicleWarrantycontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationLoanChannelCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationLoanTypeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationPaymentTypeBCOcontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductServiceProcessInformationSpecialPricecontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="IndividualProductToVehicleCollection" EntityType="cust.IndividualProductToVehicle" sap:creatable="false" sap:updatable="true" sap:deletable="true" sap:label="Registered Product"/>
+        <EntitySet Name="ServiceRequestApplyCloseApprovalCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestAppointContentcontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestAppointPeriodCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestApptCloseApprovalYWStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestApptCloseApprovalZXStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestArrivalConfirmbyCustCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestCarBrandCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestCollection" EntityType="cust.ServiceRequest" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Ticket"/>
+        <EntitySet Name="ServiceRequestComplainClasscontentCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestConformRescueStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestIsChangeSparePartCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestIsProQualityCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestIsSecNetLeadCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestNeedRescueStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestNoChangePartReasonCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestPartyCollection" EntityType="cust.ServiceRequestParty" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ServiceRequestPartyCollection"/>
+        <EntitySet Name="ServiceRequestPartyRoleCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestProQualityCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestProcessingTypeCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestServiceRequestUserLifeCycleStatusCodeCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestTicketSourceCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestZYApointfroComplainCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestZYAptStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestZYTechSupfroComplainCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <EntitySet Name="ServiceRequestZYTicketStatusCollection" EntityType="cust.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+        <AssociationSet Name="BO_AppealRootCollection_BO_AppealTextCollectionCollection" Association="cust.BO_AppealRoot_BO_AppealTextCollection" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_AppealRootCollection" Role="BO_AppealRoot"/>
+          <End EntitySet="BO_AppealTextCollectionCollection" Role="BO_AppealTextCollection"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_AssignmentHistRootCollection_BO_AssignmentHistAssignmentsCollection" Association="cust.BO_AssignmentHistRoot_BO_AssignmentHistAssignments" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_AssignmentHistRootCollection" Role="BO_AssignmentHistRoot"/>
+          <End EntitySet="BO_AssignmentHistAssignmentsCollection" Role="BO_AssignmentHistAssignments"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_RemindAppendHistRootCollection_BO_RemindAppendHistCusComplaintCollection" Association="cust.BO_RemindAppendHistRoot_BO_RemindAppendHistCusComplaint" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_RemindAppendHistRootCollection" Role="BO_RemindAppendHistRoot"/>
+          <End EntitySet="BO_RemindAppendHistCusComplaintCollection" Role="BO_RemindAppendHistCusComplaint"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_RemindAppendHistRootCollection_BO_RemindAppendHistProcessDetailCollection" Association="cust.BO_RemindAppendHistRoot_BO_RemindAppendHistProcessDetail" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_RemindAppendHistRootCollection" Role="BO_RemindAppendHistRoot"/>
+          <End EntitySet="BO_RemindAppendHistProcessDetailCollection" Role="BO_RemindAppendHistProcessDetail"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_RemindAppendHistRootCollection_BusinessPartnerCommonCollection" Association="cust.BO_RemindAppendHistRoot_BusinessPartnerCommon" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_RemindAppendHistRootCollection" Role="BO_RemindAppendHistRoot"/>
+          <End EntitySet="BusinessPartnerCommonCollection" Role="BusinessPartnerCommon"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_ReportPreparationRootCollection_BO_ReportPreparationTextCollectionCollection" Association="cust.BO_ReportPreparationRoot_BO_ReportPreparationTextCollection" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_ReportPreparationRootCollection" Role="BO_ReportPreparationRoot"/>
+          <End EntitySet="BO_ReportPreparationTextCollectionCollection" Role="BO_ReportPreparationTextCollection"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_ReturnVisitReturnVisitTaskCollection_CustomerToCustomerCollection" Association="cust.BO_ReturnVisitReturnVisitTask_CustomerToCustomer" sap:creatable="false" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_ReturnVisitReturnVisitTaskCollection" Role="BO_ReturnVisitReturnVisitTask"/>
+          <End EntitySet="CustomerToCustomerCollection" Role="CustomerToCustomer"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_ReturnVisitReturnVisitTaskCollection_IndividualProductToVehicleCollection" Association="cust.BO_ReturnVisitReturnVisitTask_IndividualProductToVehicle" sap:creatable="false" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_ReturnVisitReturnVisitTaskCollection" Role="BO_ReturnVisitReturnVisitTask"/>
+          <End EntitySet="IndividualProductToVehicleCollection" Role="IndividualProductToVehicle"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_ReturnVisitRootCollection_BO_ReturnVisitReturnVisitTaskCollection" Association="cust.BO_ReturnVisitRoot_BO_ReturnVisitReturnVisitTask" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_ReturnVisitRootCollection" Role="BO_ReturnVisitRoot"/>
+          <End EntitySet="BO_ReturnVisitReturnVisitTaskCollection" Role="BO_ReturnVisitReturnVisitTask"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_TicketApprovalItemsCollection_BO_TicketApprovalTextCollectionCollection" Association="cust.BO_TicketApprovalItems_BO_TicketApprovalTextCollection" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_TicketApprovalItemsCollection" Role="BO_TicketApprovalItems"/>
+          <End EntitySet="BO_TicketApprovalTextCollectionCollection" Role="BO_TicketApprovalTextCollection"/>
+        </AssociationSet>
+        <AssociationSet Name="BO_TicketApprovalRootCollection_BO_TicketApprovalItemsCollection" Association="cust.BO_TicketApprovalRoot_BO_TicketApprovalItems" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="BO_TicketApprovalRootCollection" Role="BO_TicketApprovalRoot"/>
+          <End EntitySet="BO_TicketApprovalItemsCollection" Role="BO_TicketApprovalItems"/>
+        </AssociationSet>
+        <AssociationSet Name="ServiceRequestPartyCollection_ServiceRequestCollection" Association="cust.ServiceRequest_ServiceRequestParty" sap:creatable="false" sap:updatable="false" sap:deletable="false">
+          <End EntitySet="ServiceRequestPartyCollection" Role="ServiceRequestParty"/>
+          <End EntitySet="ServiceRequestCollection" Role="ServiceRequest"/>
+        </AssociationSet>
+        <FunctionImport Name="BO_TPlatformRootGetLocation1" ReturnType="cust.BO_TPlatformRoot" EntitySet="BO_TPlatformRootCollection" m:HttpMethod="POST">
+          <Parameter Name="ObjectID" Type="Edm.String" Mode="In"/>
+        </FunctionImport>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

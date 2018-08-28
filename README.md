@@ -1,3 +1,5 @@
-# cli-template
+# general document generator
 
-please change package.json
+a generator for generating normal document rather than metadata
+
+plan to support `swagger`, `odata`, `soap` protocols
