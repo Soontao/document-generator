@@ -7,10 +7,10 @@ import { ODataMetadata } from "c4codata/lib/generator/meta_odata";
 import { readFileSync } from "fs";
 import { isAbsolute } from "path";
 import { Parser } from "../types/Parser";
-import { Metadata, Entity, Field, Association, EntityOperation } from "../types/Metadata";
+import { Metadata, Entity, Field, Association, EntityOperation, Protocol } from "../types/Metadata";
 import { forEach, first, map } from "lodash";
 
-export const parseC4COData: Parser = async (metadataOrPath: string) => {
+export const C4CODataParser: Parser = async (metadataOrPath: string) => {
   var metadataString = metadataOrPath;
 
   if (isAbsolute(metadataOrPath)) {
@@ -24,7 +24,7 @@ export const parseC4COData: Parser = async (metadataOrPath: string) => {
 
 export const mapC4CODataMetadataToMetadata = (odataMetadata: ODataMetadata): Metadata => {
 
-  const metadata = { entities: [] }
+  const metadata = { entities: [], protocol: Protocol.odata, name: "c4codata" }
 
   const collections = getEntityCollectionDefault(odataMetadata)
 

@@ -1,15 +1,31 @@
 
+export enum Protocol {
+  odata = "odata",
+  soap = "soap",
+  swagger = "swagger",
+}
 
 export interface Metadata {
+
+  /**
+   * api name
+   */
+  name: string;
 
   /**
    * entity types
    */
   entities: Array<Entity>;
+
   /**
    * base endpoint for api
    */
   endpoint?: string;
+
+  /**
+   * metadata protocol
+   */
+  protocol: Protocol;
 
 }
 

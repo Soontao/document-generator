@@ -3,4 +3,5 @@ coverage
 lib
 out
 *.js
-the_tests
+.DS_Store
+tests/tmp
